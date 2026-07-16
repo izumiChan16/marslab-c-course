@@ -105,8 +105,25 @@ Notion 回答“学什么和为什么”；GitHub 回答“这次具体做什么
 
 ## 目录
 
-- `src/`：课程代码；项目方向确定后再组织长期项目
-- `tests/`：测试代码和测试资源
-- `docs/`：与代码实现直接相关的设计文档，不复制完整 Notion 课程
+代码按节点拆分到 `src/` 下的子目录，避免不同 Lab 与最终项目共用 `main()` 冲突：
+
+```
+src/
+├── L00/          # Lab 00 的源文件
+├── L01/          # Lab 01 的源文件
+├── ...
+└── project/      # 最终项目的源文件（方向确定后启用）
+```
+
+- `src/L<NN>/`：每个 Lab 一个子目录，编号与 Notion 的 Lab 节点一致（如 `src/L00/syntax_card.c`）。
+- `src/project/`：最终项目代码。在完成前几个 Lab 并确定项目方向前暂不使用。
+- `tests/`：测试代码和测试资源。
+- `docs/`：与代码实现直接相关的设计文档，不复制完整 Notion 课程。
+
+每个 Lab 子目录单独编译。例如编译 Lab 00：
+
+```bash
+gcc -std=c17 -Wall -Wextra -Wpedantic src/L00/syntax_card.c -o card
+```
 
 详细提交流程见 [CONTRIBUTING.md](CONTRIBUTING.md)。
