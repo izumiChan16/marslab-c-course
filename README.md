@@ -28,16 +28,56 @@ Notion 回答“学什么和为什么”；GitHub 回答“这次具体做什么
 - 只有问题需要异步跟踪、保留复现过程或后续回看时，才创建 `question` Issue。
 - 知识点本身不创建 Issue；项目方向确定前也不预先拆分项目任务。
 
+## 如何开始
+
+下面的准备工作只需要完成一次。
+
+1. 使用学生自己的 GitHub 账号登录，在 [GitHub 通知](https://github.com/notifications) 或邀请邮件中接受本仓库的协作者邀请。作为协作者，直接克隆本仓库，不需要 Fork。
+
+2. 在 WSL 终端确认 Git 和 GitHub SSH 连接可用：
+
+   ```bash
+   git --version
+   ssh -T git@github.com
+   ```
+
+   如果 SSH 连接失败，按照 [GitHub SSH 文档](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh)完成配置，或直接询问老师。
+
+3. 在 WSL 中选择保存课程代码的位置并克隆仓库：
+
+   ```bash
+   mkdir -p ~/projects
+   cd ~/projects
+   git clone git@github.com:izumiChan16/marslab-c-course.git
+   cd marslab-c-course
+   ```
+
+4. 只为本仓库设置提交身份。邮箱使用 GitHub **Settings → Emails** 中提供的 noreply 地址：
+
+   ```bash
+   git config user.name "你的 GitHub 用户名"
+   git config user.email "你的 GitHub noreply 邮箱"
+   ```
+
+5. 确认当前位于 `main`，并且远端指向本课程仓库：
+
+   ```bash
+   git status
+   git remote -v
+   ```
+
+6. 打开仓库的 [Issues](https://github.com/izumiChan16/marslab-c-course/issues)，从老师发布的 `task` Issue 开始。当前第一个任务是 [Issue #1：基本语法与固定文本输出卡片](https://github.com/izumiChan16/marslab-c-course/issues/1)。
+
 ## 完成任务 Issue
 
 1. 阅读教师发布的任务 Issue 和其中链接的 Notion 知识点、Lab。
 
-2. 从最新的 `main` 创建任务分支。下面以 Issue `#12` 为例：
+2. 从最新的 `main` 创建任务分支。分支格式为 `task/<Issue编号>-<简短名称>`，下面以当前 Issue `#1` 为例：
 
    ```bash
    git switch main
    git pull --ff-only
-   git switch -c task/12-unit-converter
+   git switch -c task/1-basic-syntax
    ```
 
 3. 完成代码并检查改动，然后小步提交和推送：
@@ -46,8 +86,8 @@ Notion 回答“学什么和为什么”；GitHub 回答“这次具体做什么
    git status
    git diff
    git add .
-   git commit -m "implement unit conversion"
-   git push -u origin task/12-unit-converter
+   git commit -m "complete basic syntax exercise"
+   git push -u origin task/1-basic-syntax
    ```
 
 4. 在 GitHub 创建目标为 `main` 的 PR，关联任务 Issue，并根据教师 Review 继续修改同一个 PR。
