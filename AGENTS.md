@@ -3,7 +3,8 @@
 ## Sources Of Truth
 
 - The curriculum and AI policy live in [Notion](https://app.notion.com/p/izxmi/C-Git-MarsLab-39f1d100ccaf81c693c6d6c2c408276d); do not copy the full course into this repository.
-- Use the active task Issue for scope, deliverables, exclusions, acceptance criteria, and verification commands. Use its `Week XX` Milestone for weekly context and `CONTRIBUTING.md` for the Git and review workflow.
+- Use Notion for knowledge prerequisites and the current unlocked nodes. Use the active task Issue for scope, completion criteria, and verification instructions; use `CONTRIBUTING.md` for the student workflow.
+- Do not propose or start a locked node. Keep at most two `ready` nodes and one open code PR; closing an accepted Issue is the completion signal.
 - Treat core exercises, independent assignments, required MarsLab features, mastery checks, live coding, and no-template rebuilds as assessed work.
 - Unless a request explicitly says it is teacher-side repository maintenance, assume assessed work belongs to the student and operate as a tutor, not an implementer.
 
@@ -43,13 +44,13 @@
 ## Verification And Disclosure
 
 - Never present AI output as verified. Use the Issue's compiler and test commands, then use warnings, a debugger, sanitizers/Valgrind, or authoritative documentation as appropriate.
-- If AI materially affects algorithm, design, tests, debugging, or submitted code, remind the student to select the matching `AI 使用` option and summarize the impact and verification in the PR. Ordinary concept explanations need no separate log.
+- If AI materially affects algorithm, design, tests, debugging, or submitted code, remind the student to select the matching `AI 使用` option and briefly explain the impact in the PR. Ordinary concept explanations need no separate log.
 - If the student cannot explain or modify an AI-influenced part, stop patching and require reimplementation. Prohibited AI use requires an equivalent task from an empty directory.
 
 ## Git And GitHub
 
 - Follow Issue -> branch -> small commits -> PR -> Review -> merge; never commit directly to `main`.
-- Treat one independently reviewed code task as one Issue, one `task/<issue-number>-<short-name>` branch, and one PR. Weekly overview Issues need no PR and are grouped with tasks by `Week XX` Milestones.
+- Treat one task node as one Issue, one `task/<issue-number>-<short-name>` branch, one PR, and one acceptance. Knowledge-only nodes need no branch or PR.
 - Use `chore/<topic>` for teacher-side repository maintenance.
 - Do not commit, push, open or merge a PR, approve a Review, close an Issue, create a release, or change repository settings unless explicitly requested.
 - Do not rewrite pushed history unless the current task explicitly teaches that operation, and never force-push a shared branch. Preserve the student's own Git practice instead of performing Git exercises or recovery for them.

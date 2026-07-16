@@ -1,50 +1,45 @@
-# 贡献流程
+# 提交流程
 
-## 分支
+1. 从当前已解锁的任务中选择一个 `ready` Issue。
+2. 确认 Issue 中的前置节点、目标和完成标准。
+3. 从 `main` 创建该 Issue 的任务分支。
+4. 编写代码并进行小步提交。
+5. 推送分支并创建 PR。
+6. 根据 Review 修改同一个 PR。
+7. 由教师验收、合并并解锁后继节点。
 
-- `main` 始终保持可编译、可测试；不要直接向 `main` 提交。
-- 代码任务分支使用 `task/<issue-number>-<short-name>`，例如 `task/12-temperature-converter`。
-- 一个分支只处理一个需要独立 Review 的代码任务。
-- 教师维护仓库时使用 `chore/<topic>`。
-- 新任务分支从 `main` 创建。
+同时只能进行一个代码 PR。知识节点没有代码任务时，不创建分支或 PR。
 
-## 任务粒度
+## 分支名称
 
-- 一个需要独立 Review 的代码任务对应一个 Issue、一个分支和一个 PR。
-- 每周使用 `Week XX` Milestone 聚合学习总览、练习、MarsLab 功能和 Git 实验。
-- 本周学习总览 Issue 不需要 PR。
-- 前两周可以保持每周一个代码 PR；学生适应流程后再增加到每周两个。
+使用 `task/<Issue编号>-<简短名称>`，例如：
 
-## 提交
+- `task/12-temperature-converter`
+- `task/13-rover-movement`
+- `task/14-merge-conflict`
 
-提交信息使用 `<type>: <summary>`：
+一个任务节点只使用一个 Issue、一个分支和一个 PR。
 
-- `feat`：完成课程功能
-- `fix`：修复错误
-- `test`：新增或修改测试
-- `docs`：修改文档
-- `refactor`：不改变行为的代码调整
-- `chore`：仓库维护
+## 提交信息
 
-示例：`feat: implement week 01 temperature converter`
+提交信息应说明“这次修改做了什么”。
 
-每个提交应保持单一目的，不提交编译产物、编辑器配置或与任务无关的改动。
+推荐：
 
-## Pull Request
+- `add temperature conversion`
+- `handle invalid input`
+- `fix movement boundary check`
 
-- 一个代码任务 Issue 对应一个 PR，目标分支为 `main`。
-- PR 标题应概括完成的任务，例如 `feat: implement temperature converter`。
-- 使用 PR 模板填写关联 Issue、实现思路、编译命令和测试结果。
-- 使用 `Closes #<issue-number>` 关联对应的代码任务 Issue。
-- 是否需要同步 `main` 以任务 Issue 的要求为准。
-- 在尚未学习 rebase 前，不要自行重写已经推送的提交历史。
-- 遇到冲突时先保留现场，在任务 Issue 下说明情况。
-- Review 期间继续向原分支提交修改，不要为同一任务另开 PR。
+避免：
 
-## Review
+- `update`
+- `change`
+- `fix`
+- `123`
 
-- `@izumiChan16` 是默认审核者；合并前须获得其批准。
-- 作者应先完成自查，并回复每条 Review 意见。
-- 修改完成后标记对话为已解决；存在分歧时保留上下文并继续讨论。
-- Review 重点包括正确性、边界情况、可读性、测试覆盖和是否满足任务验收标准。
-- 由仓库维护者在 Review 通过且检查完成后合并 PR。
+## 注意
+
+- 不要直接修改 `main`
+- 不要提交 `.exe`、`.o` 或 `a.out`
+- 不要提交密码、Token 或个人资料
+- 不确定时先在对应 Issue 下提问
