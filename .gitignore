@@ -11,11 +11,19 @@ bin/
 *.out
 a.out
 
+# Compiler dependency files
+*.d
+
 # Test and coverage outputs
 coverage/
 *.gcda
 *.gcno
 *.gcov
+
+# Crash and debugger outputs
+core
+core.*
+vgcore.*
 
 # CMake generated files
 CMakeCache.txt

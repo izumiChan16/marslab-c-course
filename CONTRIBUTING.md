@@ -3,9 +3,17 @@
 ## 分支
 
 - `main` 始终保持可编译、可测试；不要直接向 `main` 提交。
-- 学生作业分支使用 `student/<GitHub-ID>/week-XX`，例如 `student/alice/week-01`。
-- 教师发布任务或维护仓库时使用 `task/week-XX` 或 `chore/<topic>`。
-- 新分支必须基于最新的 `main`；一个分支只处理一个任务。
+- 代码任务分支使用 `task/<issue-number>-<short-name>`，例如 `task/12-temperature-converter`。
+- 一个分支只处理一个需要独立 Review 的代码任务。
+- 教师维护仓库时使用 `chore/<topic>`。
+- 新任务分支从 `main` 创建。
+
+## 任务粒度
+
+- 一个需要独立 Review 的代码任务对应一个 Issue、一个分支和一个 PR。
+- 每周使用 `Week XX` Milestone 聚合学习总览、练习、MarsLab 功能和 Git 实验。
+- 本周学习总览 Issue 不需要 PR。
+- 前两周可以保持每周一个代码 PR；学生适应流程后再增加到每周两个。
 
 ## 提交
 
@@ -24,11 +32,13 @@
 
 ## Pull Request
 
-- 一个每周任务对应一个 PR，目标分支为 `main`。
-- PR 标题应概括完成的任务，例如 `feat: complete week 01 exercises`。
+- 一个代码任务 Issue 对应一个 PR，目标分支为 `main`。
+- PR 标题应概括完成的任务，例如 `feat: implement temperature converter`。
 - 使用 PR 模板填写关联 Issue、实现思路、编译命令和测试结果。
-- 使用 `Closes #<issue-number>` 关联每周任务。
-- 提交 PR 前先同步 `main` 并解决冲突，不使用合并提交更新任务分支。
+- 使用 `Closes #<issue-number>` 关联对应的代码任务 Issue。
+- 是否需要同步 `main` 以任务 Issue 的要求为准。
+- 在尚未学习 rebase 前，不要自行重写已经推送的提交历史。
+- 遇到冲突时先保留现场，在任务 Issue 下说明情况。
 - Review 期间继续向原分支提交修改，不要为同一任务另开 PR。
 
 ## Review
