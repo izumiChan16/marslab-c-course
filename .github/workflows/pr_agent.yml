@@ -1,0 +1,46 @@
+name: PR Agent with DeepSeek
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - ready_for_review
+      - synchronize
+  issue_comment:
+    types:
+      - created
+      - edited
+
+jobs:
+  pr_agent:
+    if: >
+      github.event.sender.type != 'Bot' &&
+      (github.event_name == 'pull_request' ||
+       github.event.issue.pull_request)
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: write
+
+    steps:
+      - name: Run PR Agent
+        uses: the-pr-agent/pr-agent@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          # DeepSeek 配置
+          DEEPSEEK.KEY: ${{ secrets.DEEPSEEK_KEY }}
+          config.model: "deepseek/deepseek-v4-flash"
+          config.fallback_models: '["deepseek/deepseek-v4-pro"]'
+
+          # 自动执行的功能
+          github_action_config.auto_review: "true"
+          github_action_config.auto_describe: "true"
+          github_action_config.auto_improve: "true"
+
+          # synchronize 表示 PR 推送新提交时重新运行
+          github_action_config.pr_actions: >
+            ["opened", "reopened", "ready_for_review", "synchronize"]
