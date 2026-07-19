@@ -33,8 +33,8 @@ jobs:
 
           # DeepSeek 配置
           DEEPSEEK.KEY: ${{ secrets.DEEPSEEK_KEY }}
-          config.model: "deepseek/deepseek-v4-flash"
-          config.fallback_models: '["deepseek/deepseek-v4-pro"]'
+          config.model: "deepseek/deepseek-v4-pro"
+          config.fallback_models: '["deepseek/deepseek-v4-flash"]'
 
           # 自动执行的功能
           github_action_config.auto_review: "true"
