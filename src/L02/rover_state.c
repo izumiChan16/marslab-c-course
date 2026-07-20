@@ -30,14 +30,14 @@ int main(){
             
             if (energy <= 22){
                 printf("| status=CRITICAL\n");
-                printf("Mission stopped: critical energy");
+                printf("Mission stopped: critical energy\n");
                 break;
             }
             if (energy > 22 && energy <= 35){
                 printf("| status=LOW\n");
             }
             if (energy > 35){
-                printf("| status= NORMAL\n");
+                printf("| status=NORMAL\n");
             }
        }
         Sol++;   
