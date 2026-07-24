@@ -18,24 +18,24 @@ int main(void){
     if (-100.0 > threshold || threshold > 100.0) {
         return -1;
     }
-    if (code < 0 ||code > 100){
+    if (code > 100){
         return -1;
     }
     if (mode !='A' && mode != 'M' && mode != 'S'){
         return -1;
     }
 
-    printf ("sizeof(char) = %d\n",sizeof(char));
-    printf ("sizeof(int) = %d\n",sizeof(int));
-    printf ("sizeof(unsigned int) = %d\n",sizeof(unsigned int));
-    printf ("sizeof(float) = %d\n",sizeof(float));
-    printf ("sizeof(double) = %d\n",sizeof(double));
+    printf ("sizeof(char) = %zu\n",sizeof(char));
+    printf ("sizeof(int) = %zu\n",sizeof(int));
+    printf ("sizeof(unsigned int) = %zu\n",sizeof(unsigned int));
+    printf ("sizeof(float) = %zu\n",sizeof(float));
+    printf ("sizeof(double) = %zu\n",sizeof(double));
 
     int imax = INT_MAX,imin =INT_MIN;
     unsigned int uimax = UINT_MAX;
     printf("int的最大值为%d,int的最小值为%d,unsigned的最大值为%u\n",imax,imin,uimax);
 
-    printf("十进制code为%d,八进制code为%o,十六进制的code为%#x\n",code,code,code);
+    printf("十进制code为%u,八进制code为%o,十六进制的code为%#x\n",code,code,code);
 
     printf("threshold的小数形式为%f,转换为int的结果为%d\n",threshold,(int)threshold);
 
