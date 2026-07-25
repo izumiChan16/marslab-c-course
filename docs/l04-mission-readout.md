@@ -75,6 +75,6 @@ GRADE
 
 ## Git 与 GitHub 操作
 
-先确认工作区没有未处理的修改，再从最新 `main` 建立本任务分支。发布 Issue 后，以 Issue 中给出的分支名为准。
+先确认工作区没有未处理的修改，再从最新 `main` 建立任务分支：`task/14-mission-readout`。
 
-只提交 `src/L04/mission_readout.c`，创建目标为 `main` 的 PR，并在 PR 描述中关联本任务 Issue。不要提交可执行文件、`build/`、`.o` 或 `.exe` 文件。
+只提交 `src/L04/mission_readout.c`，创建目标为 `main` 的 PR，并在 PR 描述中填写 `Closes #14`。不要提交可执行文件、`build/`、`.o` 或 `.exe` 文件。

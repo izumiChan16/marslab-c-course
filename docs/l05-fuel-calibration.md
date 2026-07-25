@@ -79,6 +79,6 @@ MAIN_STATUS
 
 ## Git 与 GitHub 操作
 
-从最新 `main` 创建独立任务分支；不必等待 L04 合并，但开始前应先完成 L04。发布 Issue 后，以 Issue 中给出的分支名为准。
+从最新 `main` 创建独立任务分支：`task/15-fuel-calibration`；不必等待 L04 合并，但开始前应先完成 L04。
 
-只提交 `src/L05/fuel_calibration.c`，创建目标为 `main` 的 PR，并在 PR 描述中关联本任务 Issue。不要提交可执行文件、`build/`、`.o` 或 `.exe` 文件。
+只提交 `src/L05/fuel_calibration.c`，创建目标为 `main` 的 PR，并在 PR 描述中填写 `Closes #15`。不要提交可执行文件、`build/`、`.o` 或 `.exe` 文件。
