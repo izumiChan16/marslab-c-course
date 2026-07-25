@@ -36,6 +36,7 @@ int grade(int signal,int consumption)
     {
         printf("等级为%c\n",'C');
     }
+    return 0;
 }
 
 int main()
@@ -48,9 +49,10 @@ int main()
         return -1;
     }
 
-    range(distance_km);
-    range(cargo_kg);
-    range(signal);
+    if(range(distance_km) == -1 || range(cargo_kg) == -1 || range(signal) == -1) 
+    {
+    return -1;
+    }
 
     // ------------------------
     int consumption = energy(distance_km, cargo_kg);
