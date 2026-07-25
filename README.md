@@ -6,16 +6,14 @@ MarsLab C Course 是一个通过知识学习、独立 Lab 和代码 Review 推�
 
 ## 课程资料与平台分工
 
-- [Notion：C语言与 Git 自学课程｜MarsLab](https://app.notion.com/p/izxmi/C-Git-MarsLab-39f1d100ccaf81c693c6d6c2c408276d)
-- [Notion：课程节点｜知识点、Lab 与项目](https://app.notion.com/p/39f1d100ccaf81008b3dc58882d3f195)
-- Notion 保存知识点、Lab、项目方向、学习材料和课程规则。
-- GitHub 保存任务 Issue、学生代码、PR、Review 和测试记录。
+- GitHub 仓库的 `docs/`、任务 Issue、学生代码、PR、Review 和测试记录保存课程实质内容与协作记录。
+- Notion 仅用于汇总课程进度和统计，不存放课程内容，也不是学习、任务或协作入口。
 
-Notion 回答“学什么和为什么”；GitHub 回答“这次具体做什么，以及是否完成”。
+仓库文档和 GitHub Issue 回答“学什么、做什么和如何验收”；关联 PR 记录实现、验证、Review 和合并决定。
 
 ## 课程结构
 
-- **知识点**：需要理解的概念，只在 Notion 维护，不单独创建 Issue。
+- **知识点**：需要理解的概念，实质学习材料在仓库文档中维护，不单独创建 Issue。
 - **Lab**：组合多个知识点完成的小程序，是主要的掌握证据。
 - **项目**：持续演进的程序，方向在完成前几个 Lab 后决定。
 
@@ -66,18 +64,18 @@ Notion 回答“学什么和为什么”；GitHub 回答“这次具体做什么
    git remote -v
    ```
 
-6. 打开仓库的 [Issues](https://github.com/izumiChan16/marslab-c-course/issues)，从老师发布的 `task` Issue 开始。当前第一个任务是 [Issue #1：基本语法与固定文本输出卡片](https://github.com/izumiChan16/marslab-c-course/issues/1)。
+6. 打开仓库的 [Issues](https://github.com/izumiChan16/marslab-c-course/issues)，从老师发布的 `task` Issue 开始。当前下一项任务是 [Issue #12：数据类型与逻辑运算报告](https://github.com/izumiChan16/marslab-c-course/issues/12)。
 
 ## 完成任务 Issue
 
-1. 阅读教师发布的任务 Issue 和其中链接的 Notion 知识点、Lab。
+1. 阅读教师发布的任务 Issue 及仓库 `docs/` 中的相关学习材料。
 
-2. 从最新的 `main` 创建任务分支。分支格式为 `task/<Issue编号>-<简短名称>`，下面以当前 Issue `#1` 为例：
+2. 从最新的 `main` 创建任务分支。分支格式为 `task/<Issue编号>-<简短名称>`，下面以当前 Issue `#12` 为例：
 
    ```bash
    git switch main
-   git pull --ff-only
-   git switch -c task/1-basic-syntax
+   git pull --ff-only origin main
+   git switch -c task/12-type-report
    ```
 
 3. 完成代码并检查改动，然后小步提交和推送：
@@ -85,9 +83,9 @@ Notion 回答“学什么和为什么”；GitHub 回答“这次具体做什么
    ```bash
    git status
    git diff
-   git add .
-   git commit -m "complete basic syntax exercise"
-   git push -u origin task/1-basic-syntax
+   git add src/L03/type_report.c
+   git commit -m "add type report lab"
+   git push -u origin task/12-type-report
    ```
 
 4. 在 GitHub 创建目标为 `main` 的 PR，关联任务 Issue，并根据教师 Review 继续修改同一个 PR。
@@ -115,10 +113,10 @@ src/
 └── project/      # 最终项目的源文件（方向确定后启用）
 ```
 
-- `src/L<NN>/`：每个 Lab 一个子目录，编号与 Notion 的 Lab 节点一致（如 `src/L00/syntax_card.c`）。
+- `src/L<NN>/`：每个 Lab 一个子目录，按 Lab 编号命名（如 `src/L00/syntax_card.c`）。
 - `src/project/`：最终项目代码。在完成前几个 Lab 并确定项目方向前暂不使用。
 - `tests/`：测试代码和测试资源。
-- `docs/`：与代码实现直接相关的设计文档，不复制完整 Notion 课程。
+- `docs/`：课程实质学习材料、任务相关设计文档和代码约定；Notion 数据库不存放教学内容。
 
 每个 Lab 子目录单独编译。例如编译 Lab 00：
 
