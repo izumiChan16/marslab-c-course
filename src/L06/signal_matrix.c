@@ -46,7 +46,6 @@ int main(void)
     }
     printf("\n");
 
-    int x = board[i][j];
     double sumsum = 0;
     for (i = 0; i < 3; i++)
     {
